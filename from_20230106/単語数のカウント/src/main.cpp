@@ -4,7 +4,8 @@
 #include<algorithm>
 #include<memory>
 #include<limits>
-#include<stack>
+#include<queue>
+#include<set>
 
 using namespace std;
 
@@ -46,8 +47,30 @@ namespace Util{
     }
 }
 
-
 int main( int argc, char** argv ){
-    
+    std::string s;
+    std::getline( cin, s );
+
+    std::queue<char> q1;
+    std::set<string> wordSet;
+    for( int i = 0; i < static_cast<int>(s.size()); i++ ){
+        char c = static_cast<char>(s[i]);
+        if( c != '.' && c != ',' && c != ' ' ){
+            q1.push( static_cast<char>(c) );
+            continue;
+        }
+
+        std::string tmp;
+        while( !q1.empty() ){
+            tmp += static_cast<char>(q1.front());
+            q1.pop();
+        }
+
+        if( tmp.compare( "" ) == 0 ) continue;
+
+        wordSet.insert( tmp );
+    }
+
+    cout << wordSet.size() << endl;
 return 0;
 }
