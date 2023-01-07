@@ -46,8 +46,24 @@ namespace Util{
     }
 }
 
+namespace Original{
+    int CalcNumberOfResultValues( int a, int b, int c ){
+        // 判別式 D = b^2 - 4ac
+        int D = ( b * b ) - ( 4 * a * c );
+
+        // 一つの重解をもつ
+        if( D == 0 ) return 1;
+
+        // それ以外は二つの解を持つ
+    return 2;
+    }
+}
 
 int main( int argc, char** argv ){
-    
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    int n = Original::CalcNumberOfResultValues( a, b, c );
+    cout << n << endl;
 return 0;
 }
