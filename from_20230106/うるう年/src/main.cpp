@@ -46,8 +46,21 @@ namespace Util{
     }
 }
 
+namespace Original{
+    bool IsLeepYear( int year ){
+        if( year % 100 == 0 && year % 400 != 0 ) return false;
+
+        if( year % 4 == 0 ) return true;
+    return false;
+    }
+}
+
 
 int main( int argc, char** argv ){
-    
+    int year;
+    cin >> year;
+
+    if( Original::IsLeepYear( year ) ) cout << "Yes" << endl;
+    else                               cout << "No" << endl;
 return 0;
 }
