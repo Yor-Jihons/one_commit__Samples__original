@@ -1,4 +1,4 @@
-10
+10 3
 divide 2
 add 3
 multiply 4

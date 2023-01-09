@@ -1,0 +1,4 @@
+9 3
+multiply 2
+sub 2
+divide 5
