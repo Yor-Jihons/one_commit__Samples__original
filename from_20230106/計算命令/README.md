@@ -1,4 +1,4 @@
-# タイトル
+# 計算命令
 
 This is a sample so that I can commit this to the GitHub.
 
