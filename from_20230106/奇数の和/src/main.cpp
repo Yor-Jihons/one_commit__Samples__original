@@ -48,6 +48,29 @@ namespace Util{
 
 
 int main( int argc, char** argv ){
-    
+    int n;
+    {
+        std::string str1;
+        std::getline( cin, str1 );
+        n = std::atoi( str1.c_str() );
+    }
+
+    std::string str2;
+    std::getline( cin, str2 );
+    Util::StrVec sv = Util::split( str2 );
+
+    std::vector<int> nums(n);
+    for( int i = 0; i < n; i++ ){
+        nums[i] = std::atoi( sv[i].c_str() );
+    }
+
+    int sum = 0;
+    for( int i = 0; i < n; i++ ){
+        if( nums[i] % 2 == 0 ) continue;
+
+        sum += nums[i];
+    }
+
+    cout << sum << endl;
 return 0;
 }
