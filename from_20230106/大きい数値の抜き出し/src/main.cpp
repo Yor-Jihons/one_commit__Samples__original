@@ -48,6 +48,40 @@ namespace Util{
 
 
 int main( int argc, char** argv ){
-    
+    int n, p;
+    {
+        std::string str1;
+        std::getline( cin, str1 );
+        Util::StrVec sv2 = Util::split( str1 );
+        n = std::atoi( sv2[0].c_str() );
+        p = std::atoi( sv2[1].c_str() );
+    }
+
+    std::string str2;
+    std::getline( cin, str2 );
+    Util::StrVec sv2 = Util::split( str2 );
+
+    std::vector<int> nums( n );
+    for( int i = 0; i < n; i++ ){
+        nums[i] = std::atoi( sv2[i].c_str() );
+    }
+
+    std::vector<int> ans_nums;
+    for( int i = 0; i < n; i++ ){
+        if( nums[i] > p ) ans_nums.push_back( nums[i] );
+    }
+
+    if( ans_nums.size() == 0 ){
+        cout << "None" << endl;
+        return 0;
+    }
+
+    sort( ans_nums.begin(), ans_nums.end() );
+
+    for( int i = 0; i < static_cast<int>(ans_nums.size()); i++ ){
+        cout << ans_nums[i] << flush;
+        if( i == ans_nums.size() - 1 ) cout << endl;
+        else                           cout << " " << flush;
+    }
 return 0;
 }
